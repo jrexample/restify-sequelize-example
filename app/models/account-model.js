@@ -4,10 +4,10 @@ function AccountModel(db) {
     const Account = db.sequelize.define('accounts', {
         username: {
             type: db.DataTypes.STRING,
-            unique: true
+            unique: true,
         },
         password: {
-            type: db.DataTypes.STRING
+            type: db.DataTypes.STRING,
         }
     });
 

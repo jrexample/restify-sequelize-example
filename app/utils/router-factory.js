@@ -10,7 +10,7 @@ const STATUS_CODE = {
     NO_CONTENT: 204,
     BAD_REQUEST: 400,
     NOT_FOUND: 404,
-    ERROR: 500
+    ERROR: 500,
 };
 
 function getRouterFactory(Manager) {
@@ -20,7 +20,7 @@ function getRouterFactory(Manager) {
         const sequelize = new Sequelize(DbConfig.database, DbConfig.username, DbConfig.password, {
             host: DbConfig.host,
             dialect: DbConfig.dialect,
-            operatorsAliases: DbConfig.operatorsAliases
+            operatorsAliases: DbConfig.operatorsAliases,
         });
 
         return Promise.resolve(sequelize);
@@ -29,7 +29,7 @@ function getRouterFactory(Manager) {
     function getManager(sequelize) {
         let db = {
             sequelize: sequelize,
-            DataTypes: Sequelize.DataTypes
+            DataTypes: Sequelize.DataTypes,
         };
 
         return Promise.resolve(new Manager(db));

@@ -6,7 +6,7 @@ const restify = require('restify');
 const server = restify.createServer({
     name: config.name,
     version: config.version,
-    url: config.hostname
+    url: config.hostname,
 });
 
 server.use(restify.plugins.acceptParser(server.acceptable));
